@@ -1,9 +1,10 @@
-// GbeEn7
+
 import axios from "axios";
 import { Fragment, useEffect, useState } from "react";
+import Input from "./pages/users/Input";
 
+export const BaseUrl = "https://jsonplaceholder.typicode.com";
 const App = () => {
-  const BaseUrl = "https://jsonplaceholder.typicode.com";
   const UserUrl = `${BaseUrl}/users`;
 
   const [users, setUsers] = useState([]);
@@ -29,11 +30,17 @@ const App = () => {
     };
     fetchUsers();
   }, []);
+  useEffect(()=>{
+    const getPost=async()=>{
+      const response = await axios.get(POST_URL)
+    };
+    getPost  ();
+  }, []);
 
   return (
     <>
-      This is app component
-      {users.map((user) => (
+      <Input/>
+          {users.map((user) => (
         <Fragment key={user.id}>
           <div
             style={{
