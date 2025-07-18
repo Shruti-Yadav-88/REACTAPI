@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { BaseUrl } from "../../App";
 import axios from "axios";
 
-const Input = () => {
+const Posts = () => {
   const POST_URL = `${BaseUrl}/posts`;
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -90,4 +90,4 @@ const Input = () => {
     </div>
   );
 };
-export default Input;
+export default Posts;
